@@ -1,0 +1,4 @@
+= HamlDeckHelper
+you need:
+* ruby
+* haml
