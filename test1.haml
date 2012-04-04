@@ -1,0 +1,13 @@
+- require './helpers/HamlDeckHelpers'
+
+%head
+  %meta{:charset => "utf-8"}/
+  %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+  %title Git und GitHub
+  %meta{:content => "A jQuery library for modern HTML presentations", :name => "description"}/
+  %meta{:content => "Mike Gerber und Nicolas Ganz", :name => "author"}/
+  %meta{:content => "width=1024, user-scalable=no", :name => "viewport"}/
+  = deck_header
+%body
+  = render_files ['./slides/slide1', './slides/slide2']
+  = deck_footer

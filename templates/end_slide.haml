@@ -1,0 +1,11 @@
+%h2 End of the presentation
+What do you want to do now?
+%ul
+  %li
+    %a{:href => 'javascript:$.deck("go", 0)'} restart
+  %li
+    %a{:href => 'javascript:window.close()'} quit
+  %li
+    %a{:href => '#end_slide', :onclick => '$("div#presi_infos").toggle()'} about this presentation
+    #presi_infos(style='display:none;')
+      = render_file('./templates/about')

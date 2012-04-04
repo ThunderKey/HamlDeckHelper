@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html class='no-js' lang='en'>
+  <head>
+    <!-- Core and extension CSS files -->
+    <link href='./deck/core/deck.core.css' rel='stylesheet' />
+    <link href='./deck/extensions/goto/deck.goto.css' rel='stylesheet' />
+    <link href='./deck/extensions/menu/deck.menu.css' rel='stylesheet' />
+    <link href='./deck/extensions/navigation/deck.navigation.css' rel='stylesheet' />
+    <link href='./deck/extensions/status/deck.status.css' rel='stylesheet' />
+    <link href='./deck/extensions/hash/deck.hash.css' rel='stylesheet' />
+    <!-- Style theme. More available in /themes/style/ or create your own. -->
+    <link href='./deck/themes/style/web-2.0.css' rel='stylesheet' />
+    <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+    <link href='./deck/themes/transition/horizontal-slide.css' rel='stylesheet' />
+    <script src='./deck/modernizr.custom.js'></script>
+  </head>
+  <body class='deck-container'>
+    <section class='slide' id='slide1'>
+      <h2>This ist the first test slide</h2>
+      <ul>
+        <li class='slide'>
+          <a href='./'>test 1</a>
+        </li>
+        <li class='slide'>
+          <a href='../'>test 1 - up</a>
+        </li>
+      </ul>
+    </section>
+    <section class='slide' id='slide2'>
+      <h2>This ist the second test slide</h2>
+      <ul>
+        <li class='slide'>
+          <a href='./'>test 2</a>
+        </li>
+        <li class='slide'>
+          <a href='../'>test 2 - up</a>
+        </li>
+      </ul>
+    </section>
+    <section class='slide' id='end_slide'>
+      <h2>End of the presentation</h2>
+      What do you want to do now?
+      <ul>
+        <li>
+          <a href='javascript:$.deck("go", 0)'>restart</a>
+        </li>
+        <li>
+          <a href='javascript:window.close()'>quit</a>
+        </li>
+        <li>
+          <a href='#end_slide' onclick='$("div#presi_infos").toggle()'>about this presentation</a>
+          <div id='presi_infos' style='display:none;'>
+            This presentation is made with
+            <a href='http://haml-lang.com/' target='_blank'>haml</a>
+            and
+            <a href='http://imakewebthings.com/deck.js/' target='_blank'>deck.js.</a>
+            It is combined with the
+            <a href='https://github.com/ThunderKey/HamlDeckHelper' target='_blank'>HamlDeckHelper.</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <!-- deck.navigation snippet -->
+    <a class='deck-prev-link' href='#' title='Previous'>&larr;</a>
+    <a class='deck-next-link' href='#' title='Next'>&rarr;</a>
+    <!-- deck.status snippet -->
+    <p class='deck-status'>
+      <span class='deck-status-current'></span>
+      /
+      <span class='deck-status-total'></span>
+    </p>
+    <!-- deck.goto snippet -->
+    <!--
+      goto-form (to show: $.deck('showGoTo'); to hide again: $.deck('hideGoTo');)
+      <form action='.' class='goto-form' method='get'>
+        <label for='goto-slide'>Go to slide:</label>
+        <input id='goto-slide' list='goto-datalist' name='slidenum' type='text' />
+        <datalist id='goto-datalist'></datalist>
+        <input type='submit' value='Go' />
+      </form>
+    -->
+    <!-- deck.hash snippet -->
+    <a class='deck-permalink' href='.' title='Permalink to this slide'>#</a>
+    <!-- Grab CDN jQuery, with a protocol relative URL; fall back to local if offline -->
+    <script src='./deck/jquery-1.7.min.js'></script>
+    <script src='./deck/core/deck.core.js'></script>
+    <script src='./deck/extensions/hash/deck.hash.js'></script>
+    <script src='./deck/extensions/menu/deck.menu.js'></script>
+    <script src='./deck/extensions/goto/deck.goto.js'></script>
+    <script src='./deck/extensions/status/deck.status.js'></script>
+    <script src='./deck/extensions/navigation/deck.navigation.js'></script>
+    <!-- Initialize the deck -->
+    <script type='text/javascript'>
+      //<![CDATA[
+        $(function() { $.deck('.slide'); });
+      //]]>
+    </script>
+  </body>
+</html>

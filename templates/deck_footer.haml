@@ -1,0 +1,29 @@
+/ deck.navigation snippet
+%a.deck-prev-link{:href => "#", :title => "Previous"} &larr;
+%a.deck-next-link{:href => "#", :title => "Next"} &rarr;
+/ deck.status snippet
+%p.deck-status
+  %span.deck-status-current
+  \/
+  %span.deck-status-total
+/ deck.goto snippet
+/
+  goto-form (to show: $.deck('showGoTo'); to hide again: $.deck('hideGoTo');)
+  %form.goto-form{:action => ".", :method => "get"}
+    %label{:for => "goto-slide"} Go to slide:
+    %input#goto-slide{:list => "goto-datalist", :name => "slidenum", :type => "text"}/
+    %datalist#goto-datalist
+    %input{:type => "submit", :value => "Go"}/
+/ deck.hash snippet
+%a.deck-permalink{:href => ".", :title => "Permalink to this slide"} #
+/ Grab CDN jQuery, with a protocol relative URL; fall back to local if offline
+%script{:src => "./deck/jquery-1.7.min.js"}
+%script{:src => "./deck/core/deck.core.js"}
+%script{:src => "./deck/extensions/hash/deck.hash.js"}
+%script{:src => "./deck/extensions/menu/deck.menu.js"}
+%script{:src => "./deck/extensions/goto/deck.goto.js"}
+%script{:src => "./deck/extensions/status/deck.status.js"}
+%script{:src => "./deck/extensions/navigation/deck.navigation.js"}
+/ Initialize the deck
+:javascript
+  $(function() { $.deck('.slide'); }); 
