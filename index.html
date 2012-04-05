@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="HamlDeckHelper : This helper alows you to write very easy a html/js/css based presentation, which can be viewed in every browser" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>HamlDeckHelper</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ThunderKey/HamlDeckHelper">Fork Me on GitHub</a>
+
+          <h1 id="project_title">HamlDeckHelper</h1>
+          <h2 id="project_tagline">This helper alows you to write very easy a html/js/css based presentation, which can be viewed in every browser</h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/ThunderKey/HamlDeckHelper/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/ThunderKey/HamlDeckHelper/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>Requirements</h2>
+
+<p>You must have installed Ruby and Haml. All you need now is at least the folders helpers, templates, slides and public</p>
+
+<h2>Structure</h2>
+
+<p><strong>helpers:</strong> In this folder is the Ruby file with all the needed functions.<br><strong>templates:</strong> Here are all the templates. For example the one (deck.haml) with the default settings, stylesheets and scripts, which is used in the deck function.<br><strong>slides:</strong> Here you have to save all your slides. Of course you can create subfolders. This folder will be accessed by the funciton slides.<br><strong>public:</strong> This folder contains the deck.js plugin and you should save all your .html files in this folder.<br></p>
+
+<h2>Usage</h2>
+
+<pre><code>$ haml test1.haml &gt; public\test1.html
+</code></pre>
+
+<p>With this command you can compile your test1.haml to the test1.html in the folder public.</p>
+
+<h3>Easiest way</h3>
+
+<p>Firstly create a haml file which builds the main container. You can use the default settings, stylesheets and scripts with  the function deck. With the function slides you can add many haml files which will be the different slides</p>
+
+<h4>test1.haml:</h4>
+
+<pre><code>- require './helpers/HamlDeckHelpers'
+= deck do
+  = slides ['slide1', 'slide2']
+</code></pre>
+
+<p>The slides slide1 and slide2 must be in the folder slides and must end with .haml (e.g.: slides\slide1.haml). In those files you can use normal html-tags or haml tags. If you don't want the end slide write <code>slides ['slide1', 'slide2'], false</code></p>
+
+<h4>slides\slide1.haml:</h4>
+
+<pre><code>%h2 This ist the first test slide
+%ul
+  %li.slide
+    %a(href='./') test 1
+  %li.slide
+    %a(href='../') test 1 - up
+</code></pre>
+
+<h3>Own templates</h3>
+
+<p>If you want to create an own template just add a new .haml file to the templates folder and the content which should be added from the other files can be accessed with <code>= $content</code>.<br></p>
+
+<h4>Include template</h4>
+
+<pre><code>= render_template 'template_name' [, 'content for $content variable'][ do
+  ...your code...]
+</code></pre>
+
+<p>template_name is without the foldername 'templates' and without the extension .haml (e.g.: for the template 'templates\deck.haml' use the name 'deck'). The second parameter and the block are optional, you can use just one of them or both.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">HamlDeckHelper maintained by <a href="https://github.com/ThunderKey">ThunderKey</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
