@@ -8,9 +8,7 @@ You must have installed Ruby and Haml. All you need now is at least the folders 
 **slides:** Here you have to save all your slides. Of course you can create subfolders. This folder will be accessed by the funciton slides.<br />
 **public:** This folder contains the deck.js plugin and you should save all your .html files in this folder.<br />
 == Usage
-```
-$ haml test1.haml > public\test1.html
-```
+`$ haml test1.haml > public\test1.html`
 With this command you can compile your test1.haml to the test1.html in the folder public.
 === Easiest way
 Firstly create a haml file which builds the main container. You can use the default settings, stylesheets and scripts with  the function deck. With the function slides you can add many haml files which will be the different slides
