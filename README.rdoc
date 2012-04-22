@@ -3,13 +3,13 @@
 == Requirements
 You must have installed Ruby and Haml. All you need now is at least the folders helpers, templates, slides and public
 == Structure
-= helpers
+=== helpers
 In this folder is the Ruby file with all the needed functions.
-= templates
+=== templates
 Here are all the templates. For example the one (deck.haml) with the default settings, stylesheets and scripts, which is used in the deck function.
-= slides
+=== slides
 Here you have to save all your slides. Of course you can create subfolders. This folder will be accessed by the funciton slides.
-= public
+=== public
 This folder contains the deck.js plugin and you should save all your .html files in this folder.
 == Usage
   $ haml test1.haml > public\test1.html
