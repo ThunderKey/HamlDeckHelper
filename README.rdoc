@@ -1,27 +1,27 @@
-# HamlDeckHelper
+= HamlDeckHelper
 
-## Requirements
+== Requirements
 You must have installed Ruby and Haml. All you need now is at least the folders helpers, templates, slides and public
-## Structure
+== Structure
 **helpers:** In this folder is the Ruby file with all the needed functions.<br />
 **templates:** Here are all the templates. For example the one (deck.haml) with the default settings, stylesheets and scripts, which is used in the deck function.<br />
 **slides:** Here you have to save all your slides. Of course you can create subfolders. This folder will be accessed by the funciton slides.<br />
 **public:** This folder contains the deck.js plugin and you should save all your .html files in this folder.<br />
-## Usage
+== Usage
 ```
 $ haml test1.haml > public\test1.html
 ```
 With this command you can compile your test1.haml to the test1.html in the folder public.
-### Easiest way
+=== Easiest way
 Firstly create a haml file which builds the main container. You can use the default settings, stylesheets and scripts with  the function deck. With the function slides you can add many haml files which will be the different slides
-#### test1.haml:
+==== test1.haml:
 ```
 - require './helpers/HamlDeckHelpers'
 = deck do
   = slides ['slide1', 'slide2']
 ```
 The slides slide1 and slide2 must be in the folder slides and must end with .haml (e.g.: slides\slide1.haml). In those files you can use normal html-tags or haml tags. If you don't want the end slide write `slides ['slide1', 'slide2'], false`
-#### slides\slide1.haml:
+==== slides\slide1.haml:
 ```
 %h2 This ist the first test slide
 %ul
@@ -30,9 +30,9 @@ The slides slide1 and slide2 must be in the folder slides and must end with .ham
   %li.slide
     %a(href='../') test 1 - up
 ```
-### Own templates
+=== Own templates
 If you want to create an own template just add a new .haml file to the templates folder and the content which should be added from the other files can be accessed with `= $content`.<br />
-#### Include template
+==== Include template
 ```
 = render_template 'template_name' [, 'content for $content variable'][ do
   ...your code...]
