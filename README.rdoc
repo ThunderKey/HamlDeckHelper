@@ -25,9 +25,9 @@ The slides slide1 and slide2 must be in the folder slides and must end with .ham
   %h2 This ist the first test slide
   %ul
     %li.slide
-    %a(href='./') test 1
-  %li.slide
-    %a(href='../') test 1 - up
+      %a(href='./') test 1
+    %li.slide
+      %a(href='../') test 1 - up
 === Own templates
 If you want to create an own template just add a new .haml file to the templates folder and the content which should be added from the other files can be accessed with = $content
 ==== Include template
