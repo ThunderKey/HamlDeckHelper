@@ -21,7 +21,7 @@ Firstly create a haml file which builds the main container. You can use the defa
   = deck do
     = slides ['slide1', 'slide2']
 The slides slide1 and slide2 must be in the folder slides and must end with .haml (e.g.: slides\slide1.haml). In those files you can use normal html-tags or haml tags. If you don't want the end slide write `slides ['slide1', 'slide2'], false`
-==== slides\slide1.haml:
+==== slides\\slide1.haml:
   %h2 This ist the first test slide
   %ul
     %li.slide
